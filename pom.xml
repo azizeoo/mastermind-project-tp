@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>fr.norsys</groupId>
-	<artifactId>mastermind-project</artifactId>
+	<artifactId>mastermind-project-tp</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
 
-	<name>mastermind-project</name>
+	<name>mastermind-project-tp</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
