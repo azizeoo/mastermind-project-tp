@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class MastermindTest {
-
+//test
 	@Test
 	public void shouldAvoirSolution() {
 		verifySetGetCouleur(new Couleur[] { Couleur.ROUGE, Couleur.ROUGE,
