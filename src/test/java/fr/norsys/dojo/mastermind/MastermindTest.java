@@ -4,8 +4,10 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import fr.norsys.dojo.mastermind.dto.Couleur;
+import fr.norsys.dojo.mastermind.dto.Resultat;
+
 public class MastermindTest {
-//test
 	@Test
 	public void shouldAvoirSolution() {
 		verifySetGetCouleur(new Couleur[] { Couleur.ROUGE, Couleur.ROUGE,

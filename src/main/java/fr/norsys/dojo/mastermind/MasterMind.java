@@ -1,5 +1,8 @@
 package fr.norsys.dojo.mastermind;
 
+import fr.norsys.dojo.mastermind.dto.Couleur;
+import fr.norsys.dojo.mastermind.dto.Resultat;
+
 public class MasterMind {
 
 	private Couleur[] couleurs;
