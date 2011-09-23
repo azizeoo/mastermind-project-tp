@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import fr.norsys.dojo.mastermind.dto.Couleur;
 import fr.norsys.dojo.mastermind.dto.Resultat;
+import fr.norsys.dojo.mastermind.service.MasterMind;
 
 public class MastermindTest {
 	@Test

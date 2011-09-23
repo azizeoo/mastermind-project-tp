@@ -1,4 +1,4 @@
-package fr.norsys.dojo.mastermind;
+package fr.norsys.dojo.mastermind.service;
 
 import fr.norsys.dojo.mastermind.dto.Couleur;
 import fr.norsys.dojo.mastermind.dto.Resultat;
