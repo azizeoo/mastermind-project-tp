@@ -6,8 +6,6 @@ import static org.junit.Assert.assertTrue;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.junit.Test;
 
@@ -35,11 +33,11 @@ public class DaoMastermindImplTest{
 			ResultSet r = dao.selectPartieById(idJoueur);
 			assertNotNull(r);
 			//recuperation  d'enregitrement
-			assertTrue(1 == resultSetToList(r).size());
+			assertTrue(1 == ApplicationContext.resultSetToList(r).size());
 			//suppresion  d'enregitrement
 			assertTrue(1 == dao.deletePartie(idJoueur));
 			//recuperation  d'enregitrement
-			assertTrue(0 == resultSetToList(dao.selectPartieById(idJoueur)).size());
+			assertTrue(0 == ApplicationContext.resultSetToList(dao.selectPartieById(idJoueur)).size());
 			conn.close();
 		} catch (SQLException e) {
 
@@ -69,19 +67,5 @@ public class DaoMastermindImplTest{
 		p.setDefaite(defaite);
 		p.setScore(score);
 		return p;
-	}
-
-	private static List<Partie> resultSetToList(ResultSet r) throws SQLException{
-		Partie partie;
-		List<Partie> listPartie = new ArrayList<Partie>();
-		while(r.next()){
-			partie = new Partie();
-			partie.setIdJoueur(r.getInt("id_joueur"));
-			partie.setVictoire(r.getInt("victoire"));
-			partie.setDefaite(r.getInt("defaite"));
-			partie.setScore(r.getInt("score"));
-			listPartie.add(partie);
-		}
-		return listPartie;
 	}
 }

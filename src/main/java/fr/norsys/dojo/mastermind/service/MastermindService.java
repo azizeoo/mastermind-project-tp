@@ -3,7 +3,6 @@ package fr.norsys.dojo.mastermind.service;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import fr.norsys.dojo.mastermind.dao.IDaoMastermind;
@@ -53,6 +52,13 @@ public class MastermindService {
 		conn.close();
 		return maj;
 	}
+	public List<Partie> rechercherPartier(int id) throws SQLException{
+		Connection conn = ApplicationContext.getConnexion();
+		IDaoMastermind daoPartie = new DaoMastermindImpl(conn);
+		ResultSet r = daoPartie.selectAllPartie();
+		conn.close();
+		return ApplicationContext.resultSetToList(r);
+	}
 	/**
 	 * Méthode appelle le dao pour affchier tous les enregitrements
 	 * 
@@ -60,20 +66,10 @@ public class MastermindService {
 	 * @throws SQLException
 	 */
 	public List<Partie> listerPartie() throws SQLException{
-		Partie partie;
 		Connection conn = ApplicationContext.getConnexion();
-		List<Partie> listPartie = new ArrayList<Partie>();
 		IDaoMastermind daoPartie = new DaoMastermindImpl(conn);
 		ResultSet r = daoPartie.selectAllPartie();
 		conn.close();
-		while(r.next()){
-			partie = new Partie();
-			partie.setIdJoueur(r.getInt("id_joueur"));
-			partie.setVictoire(r.getInt("vectoire"));
-			partie.setDefaite(r.getInt("defaite"));
-			partie.setScore(r.getInt("score"));
-			listPartie.add(partie);
-		}
-		return listPartie;
+		return ApplicationContext.resultSetToList(r);
 	}
 }
